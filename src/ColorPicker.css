@@ -1,0 +1,16 @@
+.picker {
+  width: 500px;
+}
+
+.box {
+  width: 10rem;
+  height: 10rem;
+}
+
+.display {
+  display: flex;
+}
+
+.click {
+  cursor: pointer;
+}
