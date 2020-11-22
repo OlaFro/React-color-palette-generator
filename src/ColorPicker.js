@@ -1,75 +1,31 @@
 import React from "react";
 import { ChromePicker } from "react-color";
-import { useState } from "react";
 import { withStyles } from "@material-ui/core/styles";
-import "./ColorPicker.css";
+import styles from "./styles/ColorPickerStyles";
 const { v4: uuid4 } = require("uuid");
 
-const styles = {
-  picker: {
-    width: "500px",
-  },
-
-  box: {
-    width: "10rem",
-    height: "10rem",
-  },
-
-  display: {
-    display: "flex",
-  },
-
-  click: {
-    cursor: "pointer",
-  },
-};
-
 function ColorPicker(props) {
-  const [pickedColor, setPickedColor] = useState({});
-  const [palette, setPalette] = useState([]);
+  const { classes, pickedColor, palette, handleClick, maxColors } = props;
 
-  const { classes } = props;
-
-  function handleClick() {
-    setPalette([...palette, pickedColor]);
-  }
-
-  function deleteBox(id) {
-    const filtered = palette.filter((elem) => elem.id !== id);
-    setPalette(filtered);
-  }
+  const complete = palette.length >= maxColors;
 
   return (
-    <div>
-      <div className={classes.display}>
-        {console.log(palette)}
-        {palette.map((elem) => (
-          <div
-            className={classes.box}
-            style={{ backgroundColor: `${elem.color}` }}
-          >
-            <div>
-              <span
-                className={classes.click}
-                onClick={() => {
-                  deleteBox(elem.id);
-                }}
-              >
-                X
-              </span>
-            </div>
-          </div>
-        ))}
-      </div>
+    <div className={classes.ColorPickerCont}>
       <div className={classes.picker}>
         <ChromePicker
           color={pickedColor.color}
           onChange={(newColor) =>
-            setPickedColor({ color: newColor.hex, id: uuid4() })
+            props.setPickedColor({ color: newColor.hex, id: uuid4() })
           }
         />
-        <button onClick={handleClick}>ADD COLOR</button>
       </div>
+      <button
+        disabled={complete}
+        className={classes.button}
+        onClick={handleClick}
+      >
+        {complete ? "Palette Full" : "Add Color"}
+      </button>
     </div>
   );
 }
