@@ -1,9 +1,9 @@
 import "./App.css";
-import ColorPicker from "./ColorPicker";
+import Generator from "./Generator";
 function App() {
   return (
     <div className="App">
-      <ColorPicker />
+      <Generator />
     </div>
   );
 }

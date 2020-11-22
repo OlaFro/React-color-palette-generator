@@ -1,12 +1,34 @@
 import React from "react";
-import { SketchPicker } from "react-color";
+import { ChromePicker } from "react-color";
 import { useState } from "react";
+import { withStyles } from "@material-ui/core/styles";
 import "./ColorPicker.css";
 const { v4: uuid4 } = require("uuid");
 
-export default function ColorPicker() {
+const styles = {
+  picker: {
+    width: "500px",
+  },
+
+  box: {
+    width: "10rem",
+    height: "10rem",
+  },
+
+  display: {
+    display: "flex",
+  },
+
+  click: {
+    cursor: "pointer",
+  },
+};
+
+function ColorPicker(props) {
   const [pickedColor, setPickedColor] = useState({});
   const [palette, setPalette] = useState([]);
+
+  const { classes } = props;
 
   function handleClick() {
     setPalette([...palette, pickedColor]);
@@ -19,13 +41,16 @@ export default function ColorPicker() {
 
   return (
     <div>
-      <div className="display">
+      <div className={classes.display}>
         {console.log(palette)}
         {palette.map((elem) => (
-          <div className="box" style={{ backgroundColor: `${elem.color}` }}>
+          <div
+            className={classes.box}
+            style={{ backgroundColor: `${elem.color}` }}
+          >
             <div>
               <span
-                className="click"
+                className={classes.click}
                 onClick={() => {
                   deleteBox(elem.id);
                 }}
@@ -36,16 +61,17 @@ export default function ColorPicker() {
           </div>
         ))}
       </div>
-      <div className="picker">
-        <SketchPicker
+      <div className={classes.picker}>
+        <ChromePicker
           color={pickedColor.color}
-          onChangeComplete={(newColor) =>
+          onChange={(newColor) =>
             setPickedColor({ color: newColor.hex, id: uuid4() })
           }
         />
         <button onClick={handleClick}>ADD COLOR</button>
-        <input type="color" />
       </div>
     </div>
   );
 }
+
+export default withStyles(styles)(ColorPicker);
