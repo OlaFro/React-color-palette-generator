@@ -1,16 +1,4 @@
 export default {
-  box: {
-    width: "20%",
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
-    color: "white",
-    textTransform: "uppercase",
-    fontFamily: "'Quicksand', monospace",
-    justifyContent: "space-around",
-    alignItems: "space-around",
-  },
-
   display: {
     margin: "3rem 0",
     display: "flex",
@@ -30,7 +18,7 @@ export default {
     fontSize: "10em",
     textAlign: "center",
     fontFamily: "'Quicksand', monospace",
-    color: "rgba(255,255,255,0.15)",
+    color: "rgba(255,255,255,0.25)",
     position: "absolute",
     left: "50%",
     top: "25%",

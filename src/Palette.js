@@ -1,7 +1,6 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
-import IconButton from "@material-ui/core/IconButton";
-import DeleteIcon from "@material-ui/icons/Delete";
+import DraggableColorBox from "./DraggableColorBox";
 import styles from "./styles/PaletteStyles.js";
 
 function Palette(props) {
@@ -10,26 +9,15 @@ function Palette(props) {
     <div>
       <div className={classes.display}>
         {palette.length === 0 && (
-          <span className={classes.info}>ADD COLOR</span>
+          <span className={classes.info}>Add color</span>
         )}
-        {palette.map((elem) => (
-          <div
-            className={classes.box}
-            style={{ backgroundColor: `${elem.color}` }}
-          >
-            <div>
-              <span>{`${elem.color}`}</span>
-            </div>
-            <div>
-              <IconButton aria-label="delete" style={{ color: "white" }}>
-                <DeleteIcon
-                  onClick={() => {
-                    deleteBox(elem.id);
-                  }}
-                />
-              </IconButton>
-            </div>
-          </div>
+        {palette.map((elem, i) => (
+          <DraggableColorBox
+            index={i}
+            deleteBox={deleteBox}
+            id={elem.id}
+            color={elem.color}
+          />
         ))}
       </div>
     </div>
