@@ -20,6 +20,7 @@ function Generator(props) {
   }
 
   function deleteBox(id) {
+    console.log("test");
     const filtered = palette.filter((elem) => elem.id !== id);
     setPalette(filtered);
     if (palette.length <= 4) {

@@ -6,18 +6,27 @@ import { withStyles } from "@material-ui/core/styles";
 import { SortableElement } from "react-sortable-hoc";
 
 const DraggableColorBox = SortableElement((props) => {
-  const { classes, deleteBox, id, color } = props;
+  const { classes, deleteBox, id, color, palette, setPalette } = props;
   return (
     <div className={classes.box} style={{ backgroundColor: color }}>
       <div>
-        <span>{`${color}`}</span>
+        <span className={classes.text}>{`${color}`}</span>
 
-        <IconButton aria-label="delete" style={{ color: "white" }}>
-          <DeleteIcon
+        <IconButton
+          aria-label="delete"
+          className={classes.icon}
+          style={{ color: "white" }}
+        >
+          {console.log(id)}
+          <button
             onClick={() => {
-              deleteBox(id);
+              console.log("test");
+              let filtered = palette.filter((elem) => elem.id !== id);
+              setPalette(filtered);
             }}
-          />
+          >
+            <DeleteIcon />
+          </button>
         </IconButton>
       </div>
     </div>

@@ -19,9 +19,11 @@ function Palette(props) {
         )}
         <DraggableColorList
           palette={palette}
+          setPalette={setPalette}
           deleteBox={deleteBox}
           axis="x"
           onSortEnd={onSortEnd}
+          lockToContainerEdges={false}
         />
       </div>
     </div>
