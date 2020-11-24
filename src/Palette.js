@@ -1,24 +1,28 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
-import DraggableColorBox from "./DraggableColorBox";
+import DraggableColorList from "./DraggableColorList";
 import styles from "./styles/PaletteStyles.js";
+import { arrayMove } from "react-sortable-hoc";
 
 function Palette(props) {
-  const { classes, palette, deleteBox } = props;
+  const { classes, palette, setPalette, deleteBox } = props;
+
+  const onSortEnd = ({ oldIndex, newIndex }) => {
+    setPalette(arrayMove(palette, oldIndex, newIndex));
+  };
+
   return (
     <div>
       <div className={classes.display}>
         {palette.length === 0 && (
           <span className={classes.info}>Add color</span>
         )}
-        {palette.map((elem, i) => (
-          <DraggableColorBox
-            index={i}
-            deleteBox={deleteBox}
-            id={elem.id}
-            color={elem.color}
-          />
-        ))}
+        <DraggableColorList
+          palette={palette}
+          deleteBox={deleteBox}
+          axis="x"
+          onSortEnd={onSortEnd}
+        />
       </div>
     </div>
   );
