@@ -11,6 +11,7 @@ function Generator(props) {
   const [pickedColor, setPickedColor] = useState({});
   const [palette, setPalette] = useState([]);
   const [complete, setComplete] = useState(false);
+  const [snackbar, setSnackbar] = useState(false);
 
   function handleClick() {
     setPalette([...palette, pickedColor]);
@@ -34,6 +35,8 @@ function Generator(props) {
         palette={palette}
         setPalette={setPalette}
         deleteBox={deleteBox}
+        snackbar={snackbar}
+        setSnackbar={setSnackbar}
       />
       <ColorPicker
         pickedColor={pickedColor}

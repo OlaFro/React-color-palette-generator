@@ -5,7 +5,14 @@ import styles from "./styles/PaletteStyles.js";
 import { arrayMove } from "react-sortable-hoc";
 
 function Palette(props) {
-  const { classes, palette, setPalette, deleteBox } = props;
+  const {
+    classes,
+    palette,
+    setPalette,
+    deleteBox,
+    snackbar,
+    setSnackbar,
+  } = props;
 
   const onSortEnd = ({ oldIndex, newIndex }) => {
     setPalette(arrayMove(palette, oldIndex, newIndex));
@@ -24,6 +31,8 @@ function Palette(props) {
           axis="x"
           onSortEnd={onSortEnd}
           lockToContainerEdges={false}
+          snackbar={snackbar}
+          setSnackbar={setSnackbar}
         />
       </div>
     </div>

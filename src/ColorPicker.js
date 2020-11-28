@@ -5,7 +5,14 @@ import styles from "./styles/ColorPickerStyles";
 const { v4: uuid4 } = require("uuid");
 
 function ColorPicker(props) {
-  const { classes, pickedColor, palette, handleClick, maxColors } = props;
+  const {
+    classes,
+    pickedColor,
+    palette,
+    handleClick,
+    maxColors,
+    setPickedColor,
+  } = props;
 
   const complete = palette.length >= maxColors;
 
@@ -15,7 +22,7 @@ function ColorPicker(props) {
         <ChromePicker
           color={pickedColor.color}
           onChange={(newColor) =>
-            props.setPickedColor({ color: newColor.hex, id: uuid4() })
+            setPickedColor({ color: newColor.hex, id: uuid4() })
           }
         />
       </div>

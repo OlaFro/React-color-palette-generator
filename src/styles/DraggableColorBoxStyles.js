@@ -21,6 +21,7 @@ export default {
     bottom: "20px",
     left: "20px",
     textTransform: "uppercase",
+    fontSize: "0.8rem",
   },
 
   buttons: {
@@ -36,10 +37,13 @@ export default {
     "&:hover": {
       opacity: "1",
     },
+    "& a": {
+      textDecoration: "none",
+      paddingTop: "0.5rem",
+    },
   },
 
   button: {
-    textDecoration: "none",
     fontFamily: "'Quicksand', monospace",
     fontSize: "1rem",
     width: "4.7rem",
@@ -48,6 +52,7 @@ export default {
     borderRadius: "15px",
     backgroundColor: "transparent",
     color: "rgba(255,255,255,0.5)",
+    outline: "none",
 
     "&:hover": {
       backgroundColor: "rgba(255,255,255,0.1)",
@@ -57,8 +62,9 @@ export default {
       outline: "none",
       backgroundColor: "rgba(255,255,255,0.5)",
     },
-    "&:focus": {
-      outline: "none",
-    },
+  },
+
+  shade: {
+    height: "50%",
   },
 };
