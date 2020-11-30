@@ -24,6 +24,15 @@ export default {
     fontSize: "0.8rem",
   },
 
+  colorNumberDark: {
+    position: "absolute",
+    bottom: "20px",
+    left: "20px",
+    textTransform: "uppercase",
+    fontSize: "0.8rem",
+    color: "rgba(0,0,0,0.6)",
+  },
+
   buttons: {
     margin: "auto",
     display: "flex",
@@ -33,7 +42,7 @@ export default {
     alignItems: "center",
     justifyContent: "space-around",
     opacity: "0",
-    cursor: "pointer",
+
     "&:hover": {
       opacity: "1",
     },
@@ -44,6 +53,7 @@ export default {
   },
 
   button: {
+    cursor: "pointer",
     fontFamily: "'Quicksand', monospace",
     fontSize: "1rem",
     width: "4.7rem",
@@ -64,7 +74,37 @@ export default {
     },
   },
 
+  buttonDark: {
+    cursor: "pointer",
+    fontFamily: "'Quicksand', monospace",
+    fontSize: "1rem",
+    width: "6rem",
+    height: "2rem",
+    border: "none",
+    borderRadius: "15px",
+    backgroundColor: "transparent",
+    color: "rgba(0,0,0,0.6)",
+    outline: "none",
+
+    "&:hover": {
+      backgroundColor: "rgba(0,0,0,0.1)",
+    },
+
+    "&:active": {
+      outline: "none",
+      backgroundColor: "rgba(0,0,0,0.4)",
+    },
+  },
+
   shade: {
     height: "50%",
+    display: "flex",
+    flexDisplay: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+
+  a: {
+    margin: "0",
   },
 };

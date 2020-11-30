@@ -12,6 +12,8 @@ function Palette(props) {
     deleteBox,
     snackbar,
     setSnackbar,
+    changeToShade,
+    setChangeToShade,
   } = props;
 
   const onSortEnd = ({ oldIndex, newIndex }) => {
@@ -33,6 +35,8 @@ function Palette(props) {
           lockToContainerEdges={false}
           snackbar={snackbar}
           setSnackbar={setSnackbar}
+          changeToShade={changeToShade}
+          setChangeToShade={setChangeToShade}
         />
       </div>
     </div>

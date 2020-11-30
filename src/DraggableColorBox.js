@@ -10,16 +10,10 @@ import { useState } from "react";
 const DraggableColorBox = SortableElement((props) => {
   const [shades, setShades] = useState([]);
   const [showShades, setShowShades] = useState(false);
+  const [currentShade, setCurrentShade] = useState("");
+  // const [isDarkColor, setIsDarkColor] = useState(false);
 
-  const {
-    classes,
-    id,
-    color,
-    deleteBox,
-    snackbar,
-    setSnackbar,
-    palette,
-  } = props;
+  const { classes, id, color, deleteBox, snackbar, setSnackbar } = props;
 
   // closing Snackbar
   const handleClose = (event, reason) => {
@@ -47,51 +41,78 @@ const DraggableColorBox = SortableElement((props) => {
     setShowShades(true);
   };
 
-  // handling the palette of shades
+  // handling the palette of shades and setting dynamic color to text
 
-  const colorsInState = palette;
-  function indexOfClickedColor(id) {
-    const filtered = palette.filter((elem, index) => {
-      return elem.id === id;
-    });
-    console.log("test");
+  function handleSwitch(shade) {
+    setCurrentShade(shade);
+    setShowShades(false);
+
+    // const newColorObj = { color: shade, id };
+    // const newPalette = palette.splice(boxIndex, 1, newColorObj);
+    // setPalette(newPalette);
   }
 
-  const handleSwitch = () => {
-    setShowShades(false);
-  };
+  const isDarkColor =
+    chroma(currentShade.length > 0 ? currentShade : color).luminance() >= 0.5;
 
-  const displayedShades = shades.map((shade) => (
-    <div style={{ backgroundColor: shade }} className={classes.shade}>
-      <button onClick={handleSwitch}>{shade}</button>
-    </div>
-  ));
+  const displayedShades = shades.map((shade) => {
+    return (
+      <div style={{ backgroundColor: shade }} className={classes.shade}>
+        <button
+          className={isDarkColor ? classes.buttonDark : classes.button}
+          onClick={(e) => handleSwitch(shade)}
+        >
+          {shade}
+        </button>
+      </div>
+    );
+  });
 
   const areShades = showShades;
 
   return (
-    <div className={classes.box} style={{ backgroundColor: color }}>
+    <div
+      className={classes.box}
+      style={{
+        backgroundColor: currentShade.length > 0 ? currentShade : color,
+      }}
+    >
       {areShades ? (
         displayedShades
       ) : (
         <React.Fragment>
-          <span className={classes.colorNumber}>{`${color}`}</span>
+          <span
+            className={
+              isDarkColor ? classes.colorNumberDark : classes.colorNumber
+            }
+          >{`${currentShade.length > 0 ? currentShade : color}`}</span>
           <div className={classes.buttons}>
-            <button className={classes.button} onClick={handleShades}>
+            <button
+              className={isDarkColor ? classes.buttonDark : classes.button}
+              onClick={() => handleShades()}
+            >
               shades
             </button>
-            <CopyToClipboard text={color}>
+            <CopyToClipboard
+              text={currentShade.length > 0 ? currentShade : color}
+            >
               <button
-                className={classes.button}
+                className={isDarkColor ? classes.buttonDark : classes.button}
                 onClick={() => setSnackbar(true)}
               >
                 copy
               </button>
             </CopyToClipboard>
-            <a href="#" className={classes.button}>
+            <a
+              href="#"
+              className={isDarkColor ? classes.buttonDark : classes.button}
+            >
               move
             </a>
-            <button className={classes.button} onClick={() => deleteBox(id)}>
+            <button
+              className={isDarkColor ? classes.buttonDark : classes.button}
+              onClick={() => deleteBox(id)}
+            >
               delete
             </button>
           </div>

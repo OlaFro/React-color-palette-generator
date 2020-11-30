@@ -12,6 +12,7 @@ function Generator(props) {
   const [palette, setPalette] = useState([]);
   const [complete, setComplete] = useState(false);
   const [snackbar, setSnackbar] = useState(false);
+  const [changeToShade, setChangeToShade] = useState();
 
   function handleClick() {
     setPalette([...palette, pickedColor]);
@@ -21,7 +22,6 @@ function Generator(props) {
   }
 
   function deleteBox(id) {
-    console.log("test");
     const filtered = palette.filter((elem) => elem.id !== id);
     setPalette(filtered);
     if (palette.length <= 4) {
@@ -37,6 +37,8 @@ function Generator(props) {
         deleteBox={deleteBox}
         snackbar={snackbar}
         setSnackbar={setSnackbar}
+        changeToShade={changeToShade}
+        setChangeToShade={setChangeToShade}
       />
       <ColorPicker
         pickedColor={pickedColor}
