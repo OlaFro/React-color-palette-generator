@@ -22,13 +22,18 @@ function ColorPicker(props) {
         <ChromePicker
           color={pickedColor.color}
           onChange={(newColor) =>
-            setPickedColor({ color: newColor.hex, id: uuid4() })
+            setPickedColor({
+              color: newColor.hex,
+              id: uuid4(),
+              rgb: newColor.rgb,
+            })
           }
+          disableAlpha={true}
         />
       </div>
       <button
         disabled={complete}
-        className={classes.button}
+        className={classes.buttonDark}
         onClick={handleClick}
       >
         {complete ? "Palette Full" : "Add Color"}

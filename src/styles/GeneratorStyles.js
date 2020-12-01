@@ -4,6 +4,12 @@ export default {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    backgroundColor: "#CDCDD2",
+    backgroundColor: "#f7f6f7",
+  },
+  panel: {
+    display: "flex",
+    alignItems: "flex-start",
+    width: "60vw",
+    justifyContent: "center",
   },
 };

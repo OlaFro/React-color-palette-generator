@@ -2,12 +2,16 @@ export default {
   display: {
     margin: "3rem 0",
     display: "flex",
-    borderRadius: "15px",
+    borderRadius: "25px",
     width: "60vw",
     height: "50vh",
     position: "relative",
     flexWrap: "wrap",
     backgroundColor: "grey",
+    // border: "1px solid white",
+    overflow: "hidden",
+    background: "linear-gradient(145deg, #deddde, #ffffff)",
+    boxShadow: "5px 5px 10px #dcdbdc, -5px -5px 10px #ffffff",
   },
 
   click: {

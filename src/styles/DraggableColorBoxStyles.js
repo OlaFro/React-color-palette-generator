@@ -11,6 +11,7 @@ export default {
     alignItems: "space-around",
     position: "relative",
     transition: "200ms",
+
     "&:hover": {
       flexGrow: "2",
     },

@@ -1,15 +1,23 @@
 export default {
-  ColorPickerCont: {
+  copyField: {
+    backgroundColor: "#585769",
+    width: "14rem",
+    height: "14rem",
+    margin: "1rem",
+    color: "white",
+    fontFamily: "monospace",
     display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    width: "250px",
+    alignItems: "flex-start",
   },
-
-  picker: {
-    margin: "1rem 0",
+  list: {
+    listStyle: "none",
+    padding: "1rem 0 0 1rem",
+    fontSize: "1rem",
+    lineHeight: "2rem",
+    fontFamily: "'Major Mono Display', monospace;",
+    margin: "0",
+    borderRadius: "15px",
   },
-
   buttonDark: {
     cursor: "pointer",
     fontFamily: "'Quicksand', monospace",
