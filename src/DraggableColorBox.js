@@ -68,8 +68,6 @@ const DraggableColorBox = SortableElement((props) => {
     );
   });
 
-  const areShades = showShades;
-
   return (
     <div
       className={classes.box}
@@ -77,8 +75,8 @@ const DraggableColorBox = SortableElement((props) => {
         backgroundColor: currentShade.length > 0 ? currentShade : color,
       }}
     >
-      {areShades ? (
-        displayedShades
+      {showShades ? (
+        <div className={classes.shades}>{displayedShades}</div>
       ) : (
         <React.Fragment>
           <span
@@ -103,12 +101,11 @@ const DraggableColorBox = SortableElement((props) => {
                 copy
               </button>
             </CopyToClipboard>
-            <a
-              href="#"
+            <button
               className={isDarkColor ? classes.buttonDark : classes.button}
             >
               move
-            </a>
+            </button>
             <button
               className={isDarkColor ? classes.buttonDark : classes.button}
               onClick={() => deleteBox(id)}

@@ -15,10 +15,9 @@ export default {
     "&:hover": {
       flexGrow: "2",
     },
-
-    "@media (max-width: 800px)": {
+    "@media (max-width: 900px)": {
       width: "100%",
-      height: "100%",
+      height: "20%",
     },
   },
 
@@ -55,6 +54,10 @@ export default {
     "& a": {
       textDecoration: "none",
       paddingTop: "0.5rem",
+    },
+    "@media (max-width: 900px)": {
+      flexDirection: "row",
+      width: "60%",
     },
   },
 
@@ -102,15 +105,24 @@ export default {
     },
   },
 
-  shade: {
-    height: "50%",
+  shades: {
+    height: "100%",
+    width: "100%",
     display: "flex",
-    flexDisplay: "column",
+    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+    "@media (max-width: 900px)": {
+      flexDirection: "row",
+    },
   },
 
-  a: {
-    margin: "0",
+  shade: {
+    width: "100%",
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
   },
 };

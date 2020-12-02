@@ -36,7 +36,7 @@ function Palette(props) {
           palette={palette}
           setPalette={setPalette}
           deleteBox={deleteBox}
-          axis="x"
+          axis="xy"
           onSortEnd={onSortEnd}
           lockToContainerEdges={false}
           snackbar={snackbar}

@@ -3,18 +3,16 @@ export default {
     margin: "3rem 0",
     display: "flex",
     flexDirection: "row",
-    borderRadius: "25px",
-    width: "60vw",
+    // borderRadius: "25px",
+    width: "80vw",
     height: "50vh",
     overflow: "hidden",
     position: "relative",
     background: "#eaeaea",
     boxShadow: "8px 8px 8px #c0c0c0, -8px -8px 8px #ffffff",
-    "@media (max-width: 800px)": {
-      flexDirection: "column",
-      backgroundColor: "red",
+    "@media (max-width: 900px)": {
       width: "80vw",
-      height: "80vh",
+      height: "60vh",
     },
   },
 
@@ -24,7 +22,7 @@ export default {
     top: "0",
     transform: "translateX(-50%)",
     textAlign: "center",
-    "@media (max-width: 800px)": {
+    "@media (max-width: 900px)": {
       top: "25%",
     },
   },
@@ -33,8 +31,8 @@ export default {
     fontFamily: "'Quicksand', monospace",
     color: "#c1c1c1",
     lineHeight: "150%",
-    "@media (max-width: 800px)": {
-      fontSize: "3rem",
+    "@media (max-width: 900px)": {
+      fontSize: "4rem",
     },
   },
   info: {
@@ -42,8 +40,8 @@ export default {
     fontFamily: "'Quicksand', monospace",
     color: "#c1c1c1",
     lineHeight: "110%",
-    "@media (max-width: 800px)": {
-      fontSize: "1rem",
+    "@media (max-width: 900px)": {
+      fontSize: "1.5rem",
     },
   },
 };
