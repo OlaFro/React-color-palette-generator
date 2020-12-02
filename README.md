@@ -28,6 +28,7 @@
   functonality and give him a possibility to drag from the place with the
   button. But native button element is clickable, so "a" tag was used. For now
   it has different style on hover.
+- 🐛 drag and drop working not properly in the Firefox
 
 ## Future implementations:
 
