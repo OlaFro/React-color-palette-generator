@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# React Color Palette Generator 🌈
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features:
 
-## Available Scripts
+- ✅ React hooks
+- ✅ Color picker from React-Color library
+- ✅ Palette with flexbox and limited amount of colors
+- ✅ Color shades from chroma.js library
+- ✅ Dynamic text color based on background luminancy (using chroma.js)
+- ✅ Copy to Clipboard from react-copy-to-clipboard library
+- ✅ unique IDs from uuid library
+- ✅ drag and drop from react-sortable-hoc library
+- ✅ snackbar (info display after copy) from material-ui library
+- ✅ withStyles from material-ui library (JSS on Higher Order Components)
+- ✅ the app is responsive
 
-In the project directory, you can run:
+## Bugs:
 
-### `npm start`
+- 🐛 Copy Hex field doesn't update after changing color to a shade. An attempt
+  to solve this is commented out in the DraggableColorBox component in the lines
+  50-52. Unfortunately unsuccessful right now.
+- 🐛 User can add the same color multiple times if the color picker doesn't
+  change the position between pushing the button "Add". The same colors have the
+  same ID, so they are all deleted at the same time. Solution -> disabling the
+  possibility to add the same color twice.
+- 🐛 Different style on 'a' tag in the color menu (pseudo 'button' for move). A
+  href has been used on purpose, to inform user about the drag-and-drop
+  functonality and give him a possibility to drag from the place with the
+  button. But native button element is clickable, so "a" tag was used. For now
+  it has different style on hover.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Future implementations:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 🚀 Adding option to save the palette
+- 🚀 Side menu/another route that shows saved palette
+- 🚀 An option to download the palette in jpg/svg
+- 🚀 Offering to copy the color codes in other formats than only HEX (rgb, rgba)
+- 🚀 Refractoring styles component with makeStyles(solution for hooks), instead
+  of withStyle
+- 🚀 changing the library to drag-and-drop because of the deprication warnings
+  in the console

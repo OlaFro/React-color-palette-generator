@@ -9,7 +9,7 @@ export default {
     overflow: "hidden",
     position: "relative",
     background: "#eaeaea",
-    boxShadow: "8px 8px 8px #c0c0c0, -8px -8px 8px #ffffff",
+    // boxShadow: "8px 8px 12px #c0c0c0, -8px -8px 12px #ffffff",
     "@media (max-width: 900px)": {
       width: "80vw",
       height: "60vh",

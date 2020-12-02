@@ -4,6 +4,9 @@ export default {
     flexDirection: "column",
     alignItems: "center",
     width: "250px",
+    // border: "1px solid blue",
+    height: "100%",
+    justifyContent: "space-between",
   },
 
   picker: {

@@ -17,7 +17,7 @@ function Generator(props) {
 
   function handleClick() {
     setPalette([...palette, pickedColor]);
-    if (palette.length === 4) {
+    if (palette.length === 5) {
       setComplete(true);
     }
   }
@@ -25,7 +25,7 @@ function Generator(props) {
   function deleteBox(id) {
     const filtered = palette.filter((elem) => elem.id !== id);
     setPalette(filtered);
-    if (palette.length <= 4) {
+    if (palette.length <= 5) {
       setComplete(false);
     }
   }
@@ -51,7 +51,7 @@ function Generator(props) {
           setPalette={setPalette}
           handleClick={handleClick}
           complete={complete}
-          maxColors={5}
+          maxColors={6}
         />
         <CopyHexField palette={palette} />
       </div>

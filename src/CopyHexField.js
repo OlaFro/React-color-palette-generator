@@ -14,13 +14,13 @@ function CopyHexField(props) {
   const readingValues = palette.map((color) => readableHex.push(color.color));
 
   return (
-    <div>
-      <div className={classes.copyField}>
+    <div className={classes.copyContainer}>
+      <code className={classes.copyField}>
         <ul className={classes.list}>{hexNumbers}</ul>
-      </div>
+      </code>
       <CopyToClipboard text={`${readableHex}`}>
         <button disabled={palette.length === 0} className={classes.buttonDark}>
-          Copy
+          Copy HEX
         </button>
       </CopyToClipboard>
     </div>

@@ -43,6 +43,7 @@ function Palette(props) {
           setSnackbar={setSnackbar}
           changeToShade={changeToShade}
           setChangeToShade={setChangeToShade}
+          // distance={30}
         />
       </div>
     </div>

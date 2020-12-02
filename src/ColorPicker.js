@@ -21,19 +21,18 @@ function ColorPicker(props) {
 
   return (
     <div className={classes.ColorPickerCont}>
-      <div className={classes.picker}>
-        <ChromePicker
-          color={pickedColor.color}
-          onChange={(newColor) =>
-            setPickedColor({
-              color: newColor.hex,
-              id: uuid4(),
-              rgb: newColor.rgb,
-            })
-          }
-          disableAlpha={true}
-        />
-      </div>
+      <ChromePicker
+        color={pickedColor.color}
+        onChange={(newColor) =>
+          setPickedColor({
+            color: newColor.hex,
+            id: uuid4(),
+            rgb: newColor.rgb,
+          })
+        }
+        disableAlpha={true}
+      />
+
       <button
         disabled={complete}
         className={classes.buttonDark}

@@ -101,11 +101,12 @@ const DraggableColorBox = SortableElement((props) => {
                 copy
               </button>
             </CopyToClipboard>
-            <button
-              className={isDarkColor ? classes.buttonDark : classes.button}
+            <a
+              href="#"
+              className={isDarkColor ? classes.buttonDarkA : classes.buttonA}
             >
               move
-            </button>
+            </a>
             <button
               className={isDarkColor ? classes.buttonDark : classes.button}
               onClick={() => deleteBox(id)}

@@ -105,6 +105,54 @@ export default {
     },
   },
 
+  buttonA: {
+    cursor: "pointer",
+    fontFamily: "'Quicksand', monospace",
+    fontSize: "1rem",
+    width: "6rem",
+    height: "2rem",
+    border: "none",
+    borderRadius: "15px",
+    backgroundColor: "transparent",
+    color: "rgba(255,255,255,0.5)",
+    outline: "none",
+    textAlign: "center",
+    padding: "0",
+
+    "&:hover": {
+      backgroundColor: "rgba(255,255,255,0.1)",
+    },
+
+    "&:active": {
+      outline: "none",
+      backgroundColor: "rgba(0,0,0,0.4)",
+    },
+  },
+
+  buttonDarkA: {
+    cursor: "pointer",
+    fontFamily: "'Quicksand', monospace",
+    fontSize: "1rem",
+    width: "6rem",
+    height: "2rem",
+    border: "none",
+    borderRadius: "15px",
+    backgroundColor: "transparent",
+    color: "rgba(0,0,0,0.6)",
+    outline: "none",
+    textAlign: "center",
+    padding: "0",
+
+    "&:hover": {
+      backgroundColor: "rgba(0,0,0,0.1)",
+    },
+
+    "&:active": {
+      outline: "none",
+      backgroundColor: "rgba(0,0,0,0.4)",
+    },
+  },
+
   shades: {
     height: "100%",
     width: "100%",
