@@ -9,7 +9,7 @@ export default {
   panel: {
     display: "flex",
     alignItems: "flex-start",
-    width: "60vw",
-    justifyContent: "center",
+    width: "40vw",
+    justifyContent: "space-around",
   },
 };

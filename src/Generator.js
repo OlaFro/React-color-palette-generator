@@ -9,7 +9,7 @@ import styles from "./styles/GeneratorStyles";
 function Generator(props) {
   const { classes } = props;
 
-  const [pickedColor, setPickedColor] = useState({});
+  const [pickedColor, setPickedColor] = useState({ color: "#448282" });
   const [palette, setPalette] = useState([]);
   const [complete, setComplete] = useState(false);
   const [snackbar, setSnackbar] = useState(false);

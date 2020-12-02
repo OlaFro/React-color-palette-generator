@@ -9,7 +9,6 @@ function CopyHexField(props) {
   const hexNumbers = palette.map((color, index) => (
     <li key={index}>{`${color.color}`}</li>
   ));
-  console.log(hexNumbers);
 
   const readableHex = [];
   const readingValues = palette.map((color) => readableHex.push(color.color));

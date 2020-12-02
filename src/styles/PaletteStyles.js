@@ -2,31 +2,48 @@ export default {
   display: {
     margin: "3rem 0",
     display: "flex",
+    flexDirection: "row",
     borderRadius: "25px",
     width: "60vw",
     height: "50vh",
-    position: "relative",
-    flexWrap: "wrap",
-    backgroundColor: "grey",
-    // border: "1px solid white",
     overflow: "hidden",
-    background: "linear-gradient(145deg, #deddde, #ffffff)",
-    boxShadow: "5px 5px 10px #dcdbdc, -5px -5px 10px #ffffff",
+    position: "relative",
+    background: "#eaeaea",
+    boxShadow: "8px 8px 8px #c0c0c0, -8px -8px 8px #ffffff",
+    "@media (max-width: 800px)": {
+      flexDirection: "column",
+      backgroundColor: "red",
+      width: "80vw",
+      height: "80vh",
+    },
   },
 
-  click: {
-    cursor: "pointer",
-  },
-
-  info: {
-    fontSize: "10em",
-    textAlign: "center",
-    fontFamily: "'Quicksand', monospace",
-    color: "rgba(255,255,255,0.25)",
+  text: {
     position: "absolute",
     left: "50%",
-    top: "25%",
+    top: "0",
     transform: "translateX(-50%)",
-    lineHeight: "80%",
+    textAlign: "center",
+    "@media (max-width: 800px)": {
+      top: "25%",
+    },
+  },
+  header: {
+    fontSize: "6em",
+    fontFamily: "'Quicksand', monospace",
+    color: "#c1c1c1",
+    lineHeight: "150%",
+    "@media (max-width: 800px)": {
+      fontSize: "3rem",
+    },
+  },
+  info: {
+    fontSize: "2rem",
+    fontFamily: "'Quicksand', monospace",
+    color: "#c1c1c1",
+    lineHeight: "110%",
+    "@media (max-width: 800px)": {
+      fontSize: "1rem",
+    },
   },
 };

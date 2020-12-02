@@ -24,7 +24,13 @@ function Palette(props) {
     <div>
       <div className={classes.display}>
         {palette.length === 0 && (
-          <span className={classes.info}>Add color</span>
+          <div className={classes.text}>
+            <h1 className={classes.header}>Hi!</h1>
+            <h2 className={classes.info}>
+              Add a color with the color picker below and create your own
+              palette!
+            </h2>
+          </div>
         )}
         <DraggableColorList
           palette={palette}
