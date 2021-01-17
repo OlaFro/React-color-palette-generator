@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import { ChromePicker } from "react-color";
 import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles/ColorPickerStyles";
@@ -16,8 +15,7 @@ function ColorPicker(props) {
   } = props;
 
   const complete = palette.length >= maxColors;
-  const sameColor = pickedColor === palette[palette.length - 1];
-  console.log(sameColor);
+  // const sameColor = pickedColor === palette[palette.length - 1];
 
   return (
     <div className={classes.ColorPickerCont}>

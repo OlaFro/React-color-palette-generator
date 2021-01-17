@@ -1,7 +1,7 @@
 import React from "react";
 import ColorPicker from "./ColorPicker";
 import Palette from "./Palette";
-import CopyHexField from "./CopyHexField";
+// import CopyHexField from "./CopyHexField";
 import { useState } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles/GeneratorStyles";
@@ -53,7 +53,7 @@ function Generator(props) {
           complete={complete}
           maxColors={6}
         />
-        <CopyHexField palette={palette} />
+        {/* <CopyHexField palette={palette} /> */}
       </div>
     </div>
   );
