@@ -1,3 +1,5 @@
+[link to deployment on Vercel](https://palette-generator.vercel.app/)
+
 # React Color Palette Generator 🌈
 
 ## Features:
