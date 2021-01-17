@@ -23,7 +23,7 @@
 - 🚀 Side menu/another route that shows saved palette
 - 🚀 An option to download the palette in jpg/svg
 - 🚀 Offering to copy the color codes in other formats than only HEX (rgb, rgba)
-- 🚀 Refractoring styles component with makeStyles(solution for hooks), instead
+- 🚀 Refactoring styles component with makeStyles(solution for hooks), instead
   of withStyle
 - 🚀 changing the library to drag-and-drop because of the deprication warnings
   in the console
